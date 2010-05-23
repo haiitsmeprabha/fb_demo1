@@ -1,0 +1,14 @@
+<%= render(:partial => "tabProfile", :assigns => {:battles => @battles, :user => @user})%>
+<%=fb_comments "User_#{@user.id}", true,
+              true, 10, :showform=>true, :callbackurl => comments_url  %>
+
+<%= link_to_function "New Attack", "show_dialog();return false;" %>
+
+<script>
+    function show_dialog() {
+        var d = new Dialog(Dialog.DIALOG_POP);
+        // Or, show a message with two buttons
+        d.showChoice("Dialog box", "popup content", "comfirm", "cancel")
+		
+    }
+</script>

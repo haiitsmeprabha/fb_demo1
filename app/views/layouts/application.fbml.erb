@@ -1,0 +1,15 @@
+<fb:fbml version="1.1">
+  <%= fb_prompt_permission :email, "Can we email you from time to time?" %>
+  <%= flash[:notice] %>
+  <fb:add-section-button section="profile" />
+  <% fb_dashboard do %>
+      <%= fb_help "Help & Feedback", fb_about_url %>
+  <% end %>
+
+  <% fb_tabs do %>
+      <%= fb_tab_item "Invite others", new_invitation_path %>
+      <%= fb_tab_item "Attack!", new_attack_path %>                                
+      <%= fb_tab_item "Battle History", attacks_path %> 
+  <% end %>
+  <%= yield %>
+</fb:fbml>

@@ -1,0 +1,16 @@
+<h2> <%= fb_name @user, :useyou=>false,
+                 :linked=>false, :possessive=>true %>
+  Battle History </h2>
+<%= fb_profile_pic @user %>
+  <% for attack in @battles %>
+      <div class="battle">
+        <%= link_to(
+                fb_name(attack.attacking_user, :linked=>false),
+                attacks_url(:user_id=> attack.attacking_user, :canvas=>true)) %>
+        attacked
+        <%= link_to(
+                fb_name(attack.defending_user, :linked=>false),
+                attacks_url(:user_id=> attack.defending_user, :canvas=>true)) %>
+        with a <%= attack.move.name %>    </div>
+  <% end %>
+

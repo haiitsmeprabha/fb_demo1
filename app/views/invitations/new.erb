@@ -1,0 +1,10 @@
+<fb:fbml>
+  <fb:add-section-button section="profile"/>
+  <% fb_multi_friend_request("Karate Poke",
+                             "Invite your friends to use Karate Poke.",
+                             invitations_path) do %>
+      Attack your friends. Install Karate Poke now.
+      <%= fb_req_choice("Attack!",
+                        new_invitation_url(:from=>@from_user_id, :canvas=>true)) %>
+  <% end %>
+</fb:fbml>

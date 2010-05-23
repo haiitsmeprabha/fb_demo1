@@ -1,0 +1,10 @@
+<fb:fbml>
+<%= link_to(
+        fb_name(@attack.attacking_user, :linked=>false),
+        attacks_url(:user_id=> @attack.attacking_user, :canvas=>true)) %>
+attacked
+<%= link_to(
+        fb_name(@attack.defending_user, :linked=>false),
+        attacks_url(:user_id=> @attack.defending_user, :canvas=>true)) %>
+with a <%= @attack.move.name %>
+</fb:fbml>                 

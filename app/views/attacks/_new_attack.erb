@@ -1,0 +1,7 @@
+<% facebook_form_for :attack, Attack.new, :url=>attacks_path do |f| %>
+    <%= f.collection_select :move_id,
+                            Move.all, :id,
+                            :name, :label=>"Move" %> <br/>
+    <%= f.multi_friend_input :label=>"User to attack" %>
+    <%= f.buttons 'Attack!' %>
+<% end %>
